@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customizable Timer App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="timer-container">
+    <div class="timer-header">
+      <h1>Multi-Purpose Timer</h1>
+      <div class="mode-selector">
+        <button class="mode-btn active" data-mode="countdown">Countdown</button>
+        <button class="mode-btn" data-mode="stopwatch">Stopwatch</button>
+      </div>
+    </div>
+
+    <div class="timer-display" id="timer-display">
+      00:00:00
+    </div>
+
+    <div class="timer-controls">
+      <button id="start-btn" class="control-btn">Start</button>
+      <button id="pause-btn" class="control-btn" disabled>Pause</button>
+      <button id="reset-btn" class="control-btn">Reset</button>
+      <button id="lap-btn" class="control-btn" disabled>Lap</button>
+    </div>
+
+    <div class="time-input">
+      <input type="number" id="hours-input" min="0" max="23" placeholder="00">
+      <span>:</span>
+      <input type="number" id="minutes-input" min="0" max="59" placeholder="00">
+      <span>:</span>
+      <input type="number" id="seconds-input" min="0" max="59" placeholder="00">
+    </div>
+
+    <div class="color-customization">
+      <h3>Color Theme</h3>
+      <div class="preset-colors">
+        <div class="color-option" style="--bg: #1e293b; --text: #ffffff; --accent: #4f46e5;" data-bg="#1e293b" data-text="#ffffff" data-accent="#4f46e5"></div>
+        <div class="color-option" style="--bg: #f8fafc; --text: #1e293b; --accent: #06b6d4;" data-bg="#f8fafc" data-text="#1e293b" data-accent="#06b6d4"></div>
+        <div class="color-option" style="--bg: #064e3b; --text: #a7f3d0; --accent: #10b981;" data-bg="#064e3b" data-text="#a7f3d0" data-accent="#10b981"></div>
+        <div class="color-option" style="--bg: #4c1d95; --text: #e0e7ff; --accent: #8b5cf6;" data-bg="#4c1d95" data-text="#e0e7ff" data-accent="#8b5cf6"></div>
+        <div class="color-option" style="--bg: #7c2d12; --text: #fed7aa; --accent: #fb923c;" data-bg="#7c2d12" data-text="#fed7aa" data-accent="#fb923c"></div>
+      </div>
+      <div class="custom-color">
+        <label for="bg-color">Background:</label>
+        <input type="color" id="bg-color" value="#1e293b">
+        <label for="text-color">Text:</label>
+        <input type="color" id="text-color" value="#ffffff">
+        <label for="accent-color">Accent:</label>
+        <input type="color" id="accent-color" value="#4f46e5">
+      </div>
+    </div>
+
+    <div class="laps-container" id="laps-container">
+      <h3>Laps</h3>
+      <div class="laps-list" id="laps-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
